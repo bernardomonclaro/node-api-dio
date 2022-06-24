@@ -37,7 +37,10 @@ usersRoute.put('/users/:uuid', async (req: Request<{ uuid: string }>, res: Respo
 });
 
 // delete /users/:uuid
-usersRoute.delete('/users/:uuid', (req: Request<{ uuid: string }>, res: Response, next: NextFunction) => {
+usersRoute.delete('/users/:uuid', async (req: Request<{ uuid: string }>, res: Response, next: NextFunction) => {
+  const uuid = req.params.uuid
+  await userRepository.remove(uuid);
   res.sendStatus(StatusCodes.OK);
 });
+
 export default usersRoute;
