@@ -36,7 +36,7 @@ async function basicAuthenticationMiddleware (req: Request, res: Response, next:
     next();
 
   } catch (error) {
-    next(error);
+      next(error);
   }
 }
 
