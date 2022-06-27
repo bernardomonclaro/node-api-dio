@@ -1,6 +1,7 @@
 import { NextFunction, Request, Response } from "express";
 import { StatusCodes } from "http-status-codes";
-import { DatabaseError } from "pg";
+import DatabaseError from "../models/errors/database.error.model";
+
 
 
 function errorHandler(error: any, req: Request, res: Response, next: NextFunction) {
