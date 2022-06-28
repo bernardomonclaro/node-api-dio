@@ -37,7 +37,7 @@ async function basicAuthenticationMiddleware (req: Request, res: Response, next:
 
   } catch (error) {
       next(error);
-  }
+    }
 }
 
 export default basicAuthenticationMiddleware;
